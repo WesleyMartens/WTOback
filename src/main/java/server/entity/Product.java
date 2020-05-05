@@ -3,6 +3,8 @@ package server.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name="`product`")
@@ -27,6 +29,21 @@ public class Product {
 
     @ManyToOne
     private Category category;
+
+//    @ManyToMany
+//    @JoinTable(
+//            name = "product_compatibility",
+//            joinColumns = @JoinColumn(name = "id"),
+//            inverseJoinColumns = @JoinColumn(name = "compatibilityproducta"))
+//    Set<Product_Compatibility> producta;
+//
+//    @ManyToMany
+//    @JoinTable(
+//            name = "product_compatibility",
+//            joinColumns = @JoinColumn(name = "id"),
+//            inverseJoinColumns = @JoinColumn(name = "compatibilityproductb"))
+//    Set<Product_Compatibility> productb;
+
 
     public Product(Category category,String name,int stock,double price,String description) {
         this.category = category;
@@ -56,4 +73,5 @@ public class Product {
 
     public String getProductDescription() { return description; }
     public void setProductDescription(String description) { this.description = description; }
+
 }

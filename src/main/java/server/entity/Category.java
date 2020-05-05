@@ -23,7 +23,7 @@ public class Category {
 
     @OneToMany
     @JoinColumn(name="`category_id`")
-    List<Product> products = new ArrayList<>();
+    List<Product> products;
 
     public Category(String name) {
         this.name = name;

@@ -6,15 +6,16 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import server.entity.Product;
+import server.entity.User;
 import server.exceptions.LoginException;
 import server.logic.IAuthenticatieLogic;
 import server.repositories.UserRepository;
 import server.responses.LoginResponse;
 import server.responses.VerifyResponse;
 
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -22,10 +23,10 @@ public class UserController {
     @Autowired
     UserRepository userRepo;
 
-    private IAuthenticatieLogic authlogic;
+    private IAuthenticatieLogic authLogic;
 
     public UserController(IAuthenticatieLogic authLogic) {
-        this.authlogic = authLogic;
+        this.authLogic = authLogic;
     }
 
     Gson gson = new Gson();
@@ -38,7 +39,7 @@ public class UserController {
         String password = body.get("password");
         int rolID = 1;
 
-        authlogic.register(name,email,password,rolID,userRepo);
+        authLogic.register(name,email,password,rolID,userRepo);
     }
 
     @PostMapping("/login")
@@ -48,7 +49,7 @@ public class UserController {
 
         String token;
         try {
-            token = authlogic.login(email, password,userRepo);
+            token = authLogic.login(email, password,userRepo);
         } catch(LoginException ex) {
             this.logger.error("Authentication failed",ex);
             return new ResponseEntity(HttpStatus.BAD_REQUEST);
@@ -61,10 +62,16 @@ public class UserController {
     @PostMapping("/verify")
     public ResponseEntity<VerifyResponse> verify(@RequestBody Map<String, String> body){
         try {
-            return new ResponseEntity<>(authlogic.verify(body.get("token"),userRepo), HttpStatus.OK);
+            return new ResponseEntity<>(authLogic.verify(body.get("token"),userRepo), HttpStatus.OK);
         }catch (Exception ex) {
             this.logger.error("verification failed",ex);
             return new ResponseEntity(HttpStatus.BAD_REQUEST);
         }
+    }
+
+    @GetMapping("/User/getUser/{userid}")
+    public List<User> getUser(@PathVariable String userid){
+        int userId = Integer.parseInt(userid);
+        return userRepo.findUser(userId);
     }
 }

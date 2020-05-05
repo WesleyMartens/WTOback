@@ -53,3 +53,7 @@ g
 7src/main/java/server/controller/CategoryController.java,b\a\ba0bf748d3f4c193fa399aa4fba480f7948dc69d
 f
 6src/main/java/server/controller/AddressController.java,d\1\d1145155ae0e4d5e3fe4812c5faa9cb6b4e20e7c
+h
+8src/main/java/server/repositories/ProductRepository.java,d\8\d883eb7148394df79847a8b9c62cef5583bfcf64
+f
+6src/main/java/server/entity/Product_Compatibility.java,0\0\00515708a40522ad995a7bdbe9ab2102489f10a5
