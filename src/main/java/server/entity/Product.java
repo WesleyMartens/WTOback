@@ -1,8 +1,10 @@
 package server.entity;
 
 import lombok.Data;
+import org.springframework.data.repository.cdi.Eager;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -11,7 +13,6 @@ import java.util.Set;
 @Data
 public class Product {
     @Id
-    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int productID;
 
@@ -30,20 +31,14 @@ public class Product {
     @ManyToOne
     private Category category;
 
-//    @ManyToMany
-//    @JoinTable(
-//            name = "product_compatibility",
-//            joinColumns = @JoinColumn(name = "id"),
-//            inverseJoinColumns = @JoinColumn(name = "compatibilityproducta"))
-//    Set<Product_Compatibility> producta;
-//
-//    @ManyToMany
-//    @JoinTable(
-//            name = "product_compatibility",
-//            joinColumns = @JoinColumn(name = "id"),
-//            inverseJoinColumns = @JoinColumn(name = "compatibilityproductb"))
-//    Set<Product_Compatibility> productb;
+    @ManyToMany(cascade={CascadeType.ALL})
+    @JoinTable(
+            joinColumns={@JoinColumn(name="product_id")},
+            inverseJoinColumns={@JoinColumn(name="compatible_id")})
+    private Set<Product> compatibleTo = new HashSet<>();
 
+    @ManyToMany(mappedBy="compatibleTo", fetch = FetchType.EAGER)
+    private Set<Product> compatibleProducts = new HashSet<>();
 
     public Product(Category category,String name,int stock,double price,String description) {
         this.category = category;
@@ -55,23 +50,5 @@ public class Product {
 
     public Product() {
     }
-
-    public int getproductID() { return productID; }
-    public void setproductID(int productID) { this.productID = productID; }
-
-    public Category getCategoryID() { return category; }
-    public void setCategoryID(Category category) { this.category = category; }
-
-    public String getProductName() { return name; }
-    public void setProductname(String name) { this.name = name; }
-
-    public int getProductStock() { return stock; }
-    public void setProductStock(int stock) { this.stock = stock; }
-
-    public double getProductPrice() { return price; }
-    public void setProductPrice(double price) { this.price = price; }
-
-    public String getProductDescription() { return description; }
-    public void setProductDescription(String description) { this.description = description; }
 
 }

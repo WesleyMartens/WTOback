@@ -12,9 +12,14 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
 import server.entity.Address;
 import server.entity.User;
+import server.logic.IAuthenticatieLogic;
 import server.repositories.AddressRepository;
+import server.repositories.UserRepository;
+import server.responses.VerifyResponse;
+
 
 import java.util.Map;
+import java.util.List;
 
 @RestController
 public class AddressController {
@@ -22,7 +27,14 @@ public class AddressController {
     @Autowired
     AddressRepository addressRepo;
 
-    public AddressController(){}
+    @Autowired
+    UserRepository userRepo;
+
+    private IAuthenticatieLogic authLogic;
+
+    public AddressController(IAuthenticatieLogic authLogic) {
+        this.authLogic = authLogic;
+    }
 
     Gson gson = new Gson();
     private Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -44,5 +56,11 @@ public class AddressController {
             this.logger.error("Creation failed");
             return new ResponseEntity(HttpStatus.BAD_REQUEST);
         }
+    }
+
+    @PostMapping("/address/")
+    public List<Address> getAddress(@RequestHeader (name="Token") String token){
+        VerifyResponse user = authLogic.verify(token,userRepo);
+        return addressRepo.findByUser(user.getId());
     }
 }

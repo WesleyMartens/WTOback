@@ -1,5 +1,4 @@
 
-Msquid:S1068"*Remove this unused "logger" private field.(ÜöÖ ûÿÿÿÿ8Ö©ÔÑœ.
-rsquid:S00100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‚›ÐÎüÿÿÿÿ8’þÔÑœ.
-Ÿsquid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¨÷¸×8Ö©ÔÑœ.
-nsquid:CommentedOutCodeLine "<This block of commented-out lines of code should be removed.(ªÆÛëúÿÿÿÿ8Ýœž.
+rsquid:S00100!"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Û«íÜÿÿÿÿÿ8’þÔÑœ.
+Msquid:S1068"*Remove this unused "logger" private field.(ÜöÖ ûÿÿÿÿ8´áçÄ .
+nsquid:CommentedOutCodeLine&"<This block of commented-out lines of code should be removed.( ªüéýÿÿÿÿ8‹ÞÔŸ .

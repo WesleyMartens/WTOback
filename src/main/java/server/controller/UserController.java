@@ -69,9 +69,9 @@ public class UserController {
         }
     }
 
-    @GetMapping("/User/getUser/{userid}")
-    public List<User> getUser(@PathVariable String userid){
-        int userId = Integer.parseInt(userid);
-        return userRepo.findUser(userId);
+    @PostMapping("/User/getUser/")
+    public List<User> getUser(@RequestHeader (name="Token") String token){
+        VerifyResponse user = authLogic.verify(token,userRepo);
+        return userRepo.findUser(user.getId());
     }
 }

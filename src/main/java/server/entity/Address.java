@@ -40,8 +40,7 @@ public class Address {
         this.country = country;
     }
 
-    public Address() {
-    }
+    public Address() { }
 
     public int getaddressID() { return addressID; }
     public void setaddressID(int addressID) { this.addressID = addressID; }

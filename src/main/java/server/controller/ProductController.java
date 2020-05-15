@@ -4,34 +4,39 @@ import com.google.gson.Gson;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RestController;
 import server.entity.Product;
+import server.logic.ProductLogic;
+import server.repositories.CategoryRepository;
 import server.repositories.ProductRepository;
 
 import java.util.List;
-import java.util.Map;
 
 @RestController
 public class ProductController {
+    private final ProductLogic productLogic;
 
     @Autowired
     ProductRepository productRepo;
 
-    public ProductController(){}
+    @Autowired
+    CategoryRepository categoryRepo;
+
+    public ProductController(ProductLogic productLogic){ this.productLogic = productLogic; }
 
     Gson gson = new Gson();
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @GetMapping("/product/getProduct/{id}")
-    public List<Product> GetProductByCategory(@PathVariable String id){
-        int category = Integer.parseInt(id);
-        return productRepo.findProductByCategoryID(category);
+    @PostMapping("/product/category")
+    public List<Product> GetProductByCategory(@RequestHeader (name="categoryid") String categoryid){
+        return productLogic.findbyCategory(Integer.parseInt(categoryid));
     }
 
-//    @GetMapping("/product/getCompatibleProduct/{category}/{product}")
-//    public List<Product> GetCompatibleProduct(@PathVariable String category, @PathVariable String product){
-//        int Category = Integer.parseInt(category);
-//        int Product = Integer.parseInt(product);
-//        return productRepo.findCompatibleProduct(Category,Product);
+//    @PostMapping("/product/getCompatibleProduct/{category}")
+//    public List<Product> GetCompatibleProduct(@RequestHeader (name="productid") String productid){
+//        int categoryid = Integer.parseInt(Categoryid);
+//        return productRepo.findOne();
 //    }
 }

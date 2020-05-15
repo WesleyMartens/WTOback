@@ -29,8 +29,7 @@ public class Category {
         this.name = name;
     }
 
-    public Category() {
-    }
+    public Category() { }
 
     public int getcategoryID() { return categoryID; }
     public void setcategoryID(int categoryID) { this.categoryID = categoryID; }

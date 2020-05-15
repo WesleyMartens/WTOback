@@ -55,5 +55,11 @@ f
 6src/main/java/server/controller/AddressController.java,d\1\d1145155ae0e4d5e3fe4812c5faa9cb6b4e20e7c
 h
 8src/main/java/server/repositories/ProductRepository.java,d\8\d883eb7148394df79847a8b9c62cef5583bfcf64
-f
-6src/main/java/server/entity/Product_Compatibility.java,0\0\00515708a40522ad995a7bdbe9ab2102489f10a5
+`
+0src/main/java/server/service/ProductService.java,8\2\828795ee5d7cbb1ab33ed6875ae42ad123e95024
+d
+4src/main/java/server/service/ProductServiceImpl.java,6\f\6f4b1089020129ac075db78e6f617483e1c6f23d
+`
+0src/main/java/server/logic/ProductLogicImpl.java,3\6\3681f6f6f76ff047e8a6eab714b2e97989180388
+\
+,src/main/java/server/logic/ProductLogic.java,8\6\860ef11a4ff9d5ed41ab7351543a594b3876b543
