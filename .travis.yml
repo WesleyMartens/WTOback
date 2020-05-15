@@ -1,5 +1,5 @@
 language: java
 jdk:
-  - opensdk11
+  - openjdk11
 script:
   - mvn clean install
