@@ -63,3 +63,9 @@ d
 0src/main/java/server/logic/ProductLogicImpl.java,3\6\3681f6f6f76ff047e8a6eab714b2e97989180388
 \
 ,src/main/java/server/logic/ProductLogic.java,8\6\860ef11a4ff9d5ed41ab7351543a594b3876b543
+U
+%target/classes/application.properties,b\b\bb173f9557479135e0f1bcd9c6c5f7b4ae5f77e8
+Y
+)src/main/resources/application.properties,0\6\06f65155ec73600b9fc5c4dc2883d4bb84d8e284
+N
+src/test/java/Server/test.java,b\b\bb2975e33b5c07146f4be89648e904777890b9d8
