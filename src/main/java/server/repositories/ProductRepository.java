@@ -15,8 +15,8 @@ public interface ProductRepository extends JpaRepository<Product,Integer> {
     @Query("select p.productID,p.name,p.description,p.stock,p.price FROM Product p where p.category.categoryID = :categoryid")
     List<Product> findByCategory(@Param("categoryid")int categoryid);
 
-    @Query("select p.productID, p.name, p.description,p.stock,p.price from Product p INNER JOIN  p.compatibleTo c on p.productID = c.compatibleProducts WHERE (p.category.categoryID = :category AND c.compatible_id = :product)")
-    List<Product> findCompatibleProduct(@Param("category")int category,@Param("product")int product);
+//    @Query("select p.productID, p.name, p.description,p.stock,p.price from Product p INNER JOIN  p.compatibleTo c on p.productID = c.compatibleProducts WHERE (p.category.categoryID = :category AND c.compatible_id = :product)")
+//    List<Product> findCompatibleProduct(@Param("category")int category,@Param("product")int product);
 
 //    List<Product> findByCompatibleProducts(Category category);
 }

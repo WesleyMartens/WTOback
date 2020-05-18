@@ -69,13 +69,13 @@ public class AuthenticatieLogicTests {
         Assertions.assertThrows(LoginException.class, () -> authenticatieLogic.register("admin","admin@hotmail.com","",1,userRepository));
     }
 
-//    @Test
-//    public void verifyJwtTokenTrue() throws LoginException {
-//        User user = new User();
-//        user.setUserID(1);
-//        user.setEmail("admin");
-//        user.setPassword("admin");
-//        String token = authenticatieLogic.login(user.getEmail(),user.getPassword(),userRepository);
-//        Assertions.assertDoesNotThrow(() -> authenticatieLogic.verify(token,userRepository));
-//    }
+    @Test
+    public void verifyJwtTokenTrue() throws LoginException {
+        User user = new User();
+        user.setUserID(1);
+        user.setEmail("admin@hotmail.com");
+        user.setPassword("admin");
+        String token = authenticatieLogic.login(user.getEmail(),user.getPassword(),userRepository);
+        Assertions.assertDoesNotThrow(() -> authenticatieLogic.verify(token,userRepository));
+    }
 }
