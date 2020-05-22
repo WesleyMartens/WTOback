@@ -35,8 +35,8 @@ public class ProductController {
         return productLogic.findbyCategory(Integer.parseInt(categoryid));
     }
 
-    @PostMapping("/product/getCompatibleProduct/")
-    public List<ProductDTO> GetCompatibleProduct(@RequestHeader (name="productid") String productid,@RequestHeader (name="categoryid") String categoryid){
-        return productRepo.findCompatibleProduct(Integer.parseInt(categoryid),Integer.parseInt(productid));
-    }
+//    @PostMapping("/product/getCompatibleProduct/")
+//    public List<ProductDTO> GetCompatibleProduct(@RequestHeader (name="productid") String productid,@RequestHeader (name="categoryid") String categoryid){
+////        return productRepo.findCompatibleProduct(Integer.parseInt(categoryid),Integer.parseInt(productid));
+//    }
 }

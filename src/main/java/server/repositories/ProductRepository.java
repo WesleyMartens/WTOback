@@ -24,6 +24,6 @@ public interface ProductRepository extends JpaRepository<Product,Integer> {
 //    List<ProductDTO> findCompatibleProduct(@Param("category")int category,@Param("product")int product);
 
 //    List<Product> findByCompatibleProducts(Category category);
-
-    List<ProductDTO> findCompatibleProduct(@Param("category")int category,@Param("product")int product);
+//
+//    List<ProductDTO> findCompatibleProduct(@Param("category")int category,@Param("product")int product);
 }
