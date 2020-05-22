@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
+import server.dto.ProductDTO;
 import server.entity.Product;
 import server.logic.ProductLogic;
 import server.repositories.CategoryRepository;
@@ -30,13 +31,12 @@ public class ProductController {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @PostMapping("/product/category")
-    public List<Product> GetProductByCategory(@RequestHeader (name="categoryid") String categoryid){
+    public List<ProductDTO> GetProductByCategory(@RequestHeader (name="categoryid") String categoryid){
         return productLogic.findbyCategory(Integer.parseInt(categoryid));
     }
 
-//    @PostMapping("/product/getCompatibleProduct/{category}")
-//    public List<Product> GetCompatibleProduct(@RequestHeader (name="productid") String productid){
-//        int categoryid = Integer.parseInt(Categoryid);
-//        return productRepo.findOne();
-//    }
+    @PostMapping("/product/getCompatibleProduct/")
+    public List<ProductDTO> GetCompatibleProduct(@RequestHeader (name="productid") String productid,@RequestHeader (name="categoryid") String categoryid){
+        return productRepo.findCompatibleProduct(Integer.parseInt(categoryid),Integer.parseInt(productid));
+    }
 }

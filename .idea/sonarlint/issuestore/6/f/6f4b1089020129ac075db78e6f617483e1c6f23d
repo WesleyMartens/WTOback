@@ -1,3 +1,5 @@
 
-^squid:UselessImportCheck"3Remove this unused import 'server.entity.Category'.(„îÅ¢8»Û’Å .
-_squid:UselessImportCheck	"/Remove this unused import 'java.util.Optional'.(¨˜ëÝüÿÿÿÿ8ôÌ´Å .
+]squid:UselessImportCheck"2Remove this unused import 'server.dto.ProductDTO'.(¾‰Ôú8é¥·ß¢.
+^squid:UselessImportCheck"3Remove this unused import 'server.entity.Category'.(„îÅ¢8»Û’Å .
+_squid:UselessImportCheck
+"/Remove this unused import 'java.util.Optional'.(¨˜ëÝüÿÿÿÿ8ôÌ´Å .

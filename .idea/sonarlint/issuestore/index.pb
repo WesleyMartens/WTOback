@@ -67,5 +67,9 @@ U
 %target/classes/application.properties,b\b\bb173f9557479135e0f1bcd9c6c5f7b4ae5f77e8
 Y
 )src/main/resources/application.properties,0\6\06f65155ec73600b9fc5c4dc2883d4bb84d8e284
-N
-src/test/java/Server/test.java,b\b\bb2975e33b5c07146f4be89648e904777890b9d8
+T
+$src/test/java/Jwt/JwtLogicTests.java,1\2\1248e91741ebd09850e77837bf103a3a77c99c58
+h
+8src/test/java/Authenticatie/AuthenticatieLogicTests.java,9\2\92798127135e8c7cc252fd5d003bf4bca4f63565
+X
+(src/main/java/server/dto/ProductDTO.java,6\1\61db165c7a6695d6d3bd1db1425980b00d0d7a8e

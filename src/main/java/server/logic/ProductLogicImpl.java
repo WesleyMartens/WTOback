@@ -1,6 +1,7 @@
 package server.logic;
 
 import org.springframework.stereotype.Component;
+import server.dto.ProductDTO;
 import server.entity.Category;
 import server.entity.Product;
 import server.service.ProductService;
@@ -15,7 +16,7 @@ public class ProductLogicImpl implements ProductLogic{
     public ProductLogicImpl(ProductService productService) { this.productService = productService; }
 
     @Override
-    public List<Product> findbyCategory(int categoryid) {
+    public List<ProductDTO> findbyCategory(int categoryid) {
         return productService.findbyCategory(categoryid);
     }
 }

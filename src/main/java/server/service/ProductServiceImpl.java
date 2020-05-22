@@ -1,6 +1,7 @@
 package server.service;
 
 import org.springframework.stereotype.Service;
+import server.dto.ProductDTO;
 import server.entity.Category;
 import server.entity.Product;
 import server.repositories.ProductRepository;
@@ -16,7 +17,7 @@ public class ProductServiceImpl implements ProductService{
 
 
     @Override
-    public List<Product> findbyCategory(int categoryid) {
+    public List<ProductDTO> findbyCategory(int categoryid) {
         return productRepo.findByCategory(categoryid);
     }
 }
