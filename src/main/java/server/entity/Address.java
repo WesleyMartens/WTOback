@@ -41,25 +41,4 @@ public class Address {
     }
 
     public Address() { }
-
-    public int getaddressID() { return addressID; }
-    public void setaddressID(int addressID) { this.addressID = addressID; }
-
-    public User getUser() { return user; }
-    public void setUser(User user) { this.user = user; }
-
-    public String getaddressStreet() { return street; }
-    public void setaddressStreet(String street) { this.street = street; }
-
-    public String getaddressZipcode() { return zipcode; }
-    public void setaddressZipcode(String zipcode) { this.zipcode = zipcode; }
-
-    public String getaddressCity() { return city; }
-    public void setaddressCity(String city) { this.city = city; }
-
-    public String getaddressNumber() { return number; }
-    public void setaddressNumber(String number) { this.number = number; }
-
-    public String getaddressCountry() { return country; }
-    public void setaddressCountry(String country) { this.country = country; }
 }

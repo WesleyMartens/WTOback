@@ -1,6 +1,7 @@
 package server.service;
 
 import org.springframework.stereotype.Service;
+import server.dto.AddressDTO;
 import server.entity.Address;
 import server.entity.Product;
 import server.repositories.AddressRepository;
@@ -15,7 +16,7 @@ public class AddressServiceImpl implements AddressService{
     public AddressServiceImpl(AddressRepository addressRepo) { this.addressRepo = addressRepo; }
 
     @Override
-    public List<Address> findbyUserid(int userid) { return addressRepo.findByUser(userid); }
+    public List<AddressDTO> findbyUserid(int userid) { return addressRepo.findByUser(userid); }
 
     @Override
     public void addressSave(Address address) {  addressRepo.save(address); }

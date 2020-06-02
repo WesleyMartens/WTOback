@@ -40,6 +40,10 @@ public class Product {
     @ManyToMany(mappedBy="compatibleTo", fetch = FetchType.EAGER)
     private Set<Product> compatibleProducts = new HashSet<>();
 
+    @OneToMany(mappedBy = "product")
+    List<ProductOrder> productOrders;
+
+
     public Product(Category category,String name,int stock,double price,String description) {
         this.category = category;
         this.name = name;
@@ -47,6 +51,8 @@ public class Product {
         this.price = price;
         this.description = description;
     }
+
+
 
     public Product() {
     }

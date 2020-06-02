@@ -1,6 +1,7 @@
 package server.logic;
 
 import org.springframework.stereotype.Component;
+import server.dto.AddressDTO;
 import server.entity.Address;
 import server.entity.User;
 import server.repositories.UserRepository;
@@ -24,7 +25,7 @@ public class AddressLogicImpl implements AddressLogic{
     }
 
     @Override
-    public List<Address> findbyUserid(int userid) { return addressService.findbyUserid(userid); }
+    public List<AddressDTO> findbyUserid(int userid) { return addressService.findbyUserid(userid); }
 
     public void addressSave(String token, String street, String zipcode, String city, String number, String country) {
         VerifyResponse user = authLogic.verify(token,userRepo);

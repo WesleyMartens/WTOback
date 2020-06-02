@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
+import server.dto.AddressDTO;
 import server.entity.Address;
 import server.entity.User;
 import server.logic.AddressLogic;
@@ -60,7 +61,7 @@ public class AddressController {
     }
 
     @PostMapping("/address/")
-    public List<Address> getAddress(@RequestHeader (name="Token") String token){
+    public List<AddressDTO> getAddress(@RequestHeader (name="Token") String token){
         VerifyResponse user = authLogic.verify(token,userRepo);
         return addressLogic.findbyUserid(user.getId());
     }
