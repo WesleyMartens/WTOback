@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface ProductLogic {
     List<ProductDTO> findbyCategory(int categoryid);
+//    List<ProductDTO> findcompatibleproduct(int categoryid, int productid);
 }

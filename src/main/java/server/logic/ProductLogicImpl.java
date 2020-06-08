@@ -19,4 +19,9 @@ public class ProductLogicImpl implements ProductLogic{
     public List<ProductDTO> findbyCategory(int categoryid) {
         return productService.findbyCategory(categoryid);
     }
+
+//    @Override
+//    public List<ProductDTO> findcompatibleproduct(int categoryid, int productid) {
+//        return productService.findcompatibleproduct(categoryid,productid);
+//    }
 }

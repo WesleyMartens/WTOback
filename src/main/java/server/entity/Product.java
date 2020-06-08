@@ -1,16 +1,18 @@
 package server.entity;
 
 import lombok.Data;
+import org.springframework.data.jpa.repository.query.Procedure;
 import org.springframework.data.repository.cdi.Eager;
+import server.dto.ProductDTO;
 
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-@Entity
-@Table(name="`product`")
+
 @Data
+@Entity
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -51,8 +53,6 @@ public class Product {
         this.price = price;
         this.description = description;
     }
-
-
 
     public Product() {
     }

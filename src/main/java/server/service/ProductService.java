@@ -9,4 +9,6 @@ import java.util.Optional;
 
 public interface ProductService {
     List<ProductDTO> findbyCategory(int categoryid);
+
+//    List<ProductDTO> findcompatibleproduct(int categoryid, int productid);
 }

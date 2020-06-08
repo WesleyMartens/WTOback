@@ -28,9 +28,6 @@ public class AddressController {
     private final AddressLogic addressLogic;
 
     @Autowired
-    AddressRepository addressRepo;
-
-    @Autowired
     UserRepository userRepo;
 
     private IAuthenticatieLogic authLogic;
@@ -44,12 +41,12 @@ public class AddressController {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @PostMapping("/address/create")
-    public ResponseEntity createAddress(@RequestBody Map<String, String> body,@RequestHeader (name="Token") String token){
-        String street = body.get("street");
-        String zipcode = body.get("zipcode");
-        String city = body.get("city");
-        String number = body.get("number");
-        String country = body.get("country");
+    public ResponseEntity createAddress(@RequestHeader (name="Token") String token,
+                                        @RequestHeader (name="Street") String street,
+                                        @RequestHeader (name="Zipcode") String zipcode,
+                                        @RequestHeader (name="City") String city,
+                                        @RequestHeader (name="Number") String number,
+                                        @RequestHeader (name="Country") String country){
         try {
             addressLogic.addressSave(token,street,zipcode,city,number,country);
             return new ResponseEntity(HttpStatus.OK);

@@ -2,6 +2,7 @@ package server.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.jpa.repository.query.Procedure;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import server.dto.ProductDTO;
@@ -26,4 +27,10 @@ public interface ProductRepository extends JpaRepository<Product,Integer> {
 //    List<Product> findByCompatibleProducts(Category category);
 //
 //    List<ProductDTO> findCompatibleProduct(@Param("category")int category,@Param("product")int product);
+
+//    @Procedure
+//    List<Product> FIND_COMPATIBLE_PRODUCTS(@Param("product_in") int productid,@Param("category_in") int categoryid);
+
+//    @Query(value = "CALL compatible_products(:product_in,:category_in);", nativeQuery = true)
+//    List<ProductDTO> getCompatibleProductsByEntity(@Param("product_in") int product_in,@Param("category_in") int category_in);
 }

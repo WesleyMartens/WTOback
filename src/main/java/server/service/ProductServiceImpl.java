@@ -20,4 +20,9 @@ public class ProductServiceImpl implements ProductService{
     public List<ProductDTO> findbyCategory(int categoryid) {
         return productRepo.findByCategory(categoryid);
     }
+
+//    @Override
+//    public List<ProductDTO> findcompatibleproduct(int categoryid, int productid) {
+//        return productRepo.getCompatibleProductsByEntity(productid,categoryid);
+//    }
 }
