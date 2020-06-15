@@ -34,9 +34,4 @@ public class ProductController {
     public List<ProductDTO> GetProductByCategory(@RequestHeader (name="categoryid") String categoryid){
         return productLogic.findbyCategory(Integer.parseInt(categoryid));
     }
-
-//    @PostMapping("/product/getCompatibleProduct/")
-//    public List<ProductDTO> GetCompatibleProduct(@RequestHeader (name="productid") String productid,@RequestHeader (name="categoryid") String categoryid){
-//        return productLogic.findcompatibleproduct(2,4);
-//    }
 }

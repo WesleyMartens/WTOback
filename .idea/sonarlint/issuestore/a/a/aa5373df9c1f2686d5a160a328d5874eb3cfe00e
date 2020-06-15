@@ -1,7 +1,5 @@
 
-T
-java:S1128"2Remove this unused import 'server.entity.Product'.(Úú©êûÿÿÿÿ8¯ Ô­§.
+]	java:S125'"<This block of commented-out lines of code should be removed.(°ºíäùÿÿÿÿ8ÍÎÈ™©.
 L
 java:S1068"*Remove this unused "logger" private field.(ÜöÖ ûÿÿÿÿ8 áõ©§.
-o	java:S100'"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‚†ñíúÿÿÿÿ8§‡ä¬§.
 j	java:S100""NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¸ º—8 áõ©§.
